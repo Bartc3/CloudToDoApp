@@ -3,9 +3,9 @@ const Todo = require('../models/todo.model');
 exports.getTodos = (req, res) => {
     Todo.findAll({}).then((err, todos) => {
         if (err) {
-            res.send(err);
+            return res.send(err);
         }
-        res.json(todos);
+        return res.json(todos);
     });
 };
 
